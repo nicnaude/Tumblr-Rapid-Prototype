@@ -12,6 +12,8 @@ class TabBarControllerViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIScrollView!
     
+    @IBOutlet weak var searchMessage: UIImageView!
+    
     // ViewControllers
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
@@ -28,10 +30,17 @@ class TabBarControllerViewController: UIViewController {
     
     //variables
     var buttonName: String?
+    var increment = CGFloat()
+    var messageUpAndDown = CGPoint()
     
     //Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        increment = 10
+        
+        self.messageUpAndDown = CGPoint(x: self.searchMessage.center.x ,y: self.searchMessage.center.y + increment)
+        
         
         buttonName = "homeButton"
         
@@ -59,6 +68,16 @@ class TabBarControllerViewController: UIViewController {
         
         containerView.addSubview(homeViewController.view)
         
+        // Animate floating message
+        
+        UIView.animate(withDuration: 0.9, delay: 0.0, options: [.repeat, .curveEaseOut, .autoreverse], animations: {
+            self.searchMessage.center = self.messageUpAndDown
+            
+        }, completion: { finished in
+            //code that runs after the transition is complete here
+        })
+        //
+        
     } // end of ViewDidLoad
     
     
@@ -70,6 +89,7 @@ class TabBarControllerViewController: UIViewController {
             composeButton.setImage(UIImage(named: "compose_button"), for: UIControlState.normal)
             accountButton.setImage(UIImage(named: "account_icon"), for: UIControlState.normal)
             activityButton.setImage(UIImage(named: "trending_icon"), for: UIControlState.normal)
+            searchMessage.isHidden = false
             
         } else if sender == "searchButton"{
             homeButton.setImage(UIImage(named: "home_icon"), for: UIControlState.normal)
@@ -77,6 +97,7 @@ class TabBarControllerViewController: UIViewController {
             composeButton.setImage(UIImage(named: "compose_button"), for: UIControlState.normal)
             accountButton.setImage(UIImage(named: "account_icon"), for: UIControlState.normal)
             activityButton.setImage(UIImage(named: "trending_icon"), for: UIControlState.normal)
+            searchMessage.isHidden = true
         }
         else if sender == "composeButton"{
             homeButton.setImage(UIImage(named: "home_icon"), for: UIControlState.normal)
@@ -84,6 +105,7 @@ class TabBarControllerViewController: UIViewController {
             composeButton.setImage(UIImage(named: "compose_button"), for: UIControlState.normal)
             accountButton.setImage(UIImage(named: "account_icon"), for: UIControlState.normal)
             activityButton.setImage(UIImage(named: "trending_icon"), for: UIControlState.normal)
+            searchMessage.isHidden = false
         }
         else if sender == "accountButton"{
             homeButton.setImage(UIImage(named: "home_icon"), for: UIControlState.normal)
@@ -91,6 +113,7 @@ class TabBarControllerViewController: UIViewController {
             composeButton.setImage(UIImage(named: "compose_button"), for: UIControlState.normal)
             accountButton.setImage(UIImage(named: "account_selected_icon"), for: UIControlState.normal)
             activityButton.setImage(UIImage(named: "trending_icon"), for: UIControlState.normal)
+            searchMessage.isHidden = false
         }
         else if sender == "activityButton"{
             homeButton.setImage(UIImage(named: "home_icon"), for: UIControlState.normal)
@@ -98,13 +121,13 @@ class TabBarControllerViewController: UIViewController {
             composeButton.setImage(UIImage(named: "compose_button"), for: UIControlState.normal)
             accountButton.setImage(UIImage(named: "account_icon"), for: UIControlState.normal)
             activityButton.setImage(UIImage(named: "trending_selected_icon"), for: UIControlState.normal)
+            searchMessage.isHidden = false
         }
     }
     
     // Button methods:
     @IBAction func onHomeButtonTapped(_ sender: UIButton) {
         buttonName = "homeButton"
-        print(buttonName)
         buttonActiveState(sender: buttonName)
         
         containerView.setContentOffset(CGPoint(x:0,y:0), animated: true)
@@ -117,7 +140,6 @@ class TabBarControllerViewController: UIViewController {
     
     @IBAction func onSearchButtonTapped(_ sender: UIButton) {
         buttonName = "searchButton"
-        print(buttonName)
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(searchViewController.view)
@@ -125,7 +147,6 @@ class TabBarControllerViewController: UIViewController {
     
     @IBAction func onComposeButtonTapped(_ sender: UIButton) {
         buttonName = "composeButton"
-        print(buttonName)
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(composeViewController.view)
@@ -133,7 +154,6 @@ class TabBarControllerViewController: UIViewController {
     
     @IBAction func onActivityButtonTapped(_ sender: UIButton) {
         buttonName = "activityButton"
-        print(buttonName)
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(activityViewController.view)
@@ -141,7 +161,6 @@ class TabBarControllerViewController: UIViewController {
     
     @IBAction func onAccountButtonTapped(_ sender: UIButton) {
         buttonName = "accountButton"
-        print(buttonName)
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(accountViewController.view)
