@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2u1-0F-ywh">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="2u1-0F-ywh">
                                         <rect key="frame" x="76" y="9" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon"/>
@@ -57,7 +57,7 @@
                                             <action selector="onSearchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Isj-mN-MSU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IZq-vz-fI2">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="IZq-vz-fI2">
                                         <rect key="frame" x="135" y="8" width="50" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
@@ -65,7 +65,7 @@
                                             <action selector="onComposeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Shk-h4-Sol"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lvg-FL-Bnm">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="lvg-FL-Bnm">
                                         <rect key="frame" x="268" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon"/>
@@ -73,15 +73,15 @@
                                             <action selector="onActivityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xxy-Jp-Ntm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3uz-UI-hWk">
-                                        <rect key="frame" x="211" y="8" width="35" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="3uz-UI-hWk">
+                                        <rect key="frame" x="206" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon"/>
                                         <connections>
                                             <action selector="onAccountButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQY-E8-Ecb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OVl-sz-FXQ">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="OVl-sz-FXQ">
                                         <rect key="frame" x="18" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon"/>
@@ -100,7 +100,12 @@
                         <color key="backgroundColor" red="0.20107102394104004" green="0.27699533104896545" blue="0.36016190052032471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="accountButton" destination="3uz-UI-hWk" id="hLG-Ib-sLj"/>
+                        <outlet property="activityButton" destination="lvg-FL-Bnm" id="Lfa-eQ-79z"/>
+                        <outlet property="composeButton" destination="IZq-vz-fI2" id="AJl-lD-Vyu"/>
                         <outlet property="containerView" destination="wZo-jx-piB" id="eQE-di-a7r"/>
+                        <outlet property="homeButton" destination="OVl-sz-FXQ" id="TMk-43-5mi"/>
+                        <outlet property="searchButton" destination="2u1-0F-ywh" id="hZ9-s1-RcD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
