@@ -1,6 +1,6 @@
-## Mailbox
+## Tumnblr rapid prototype
 
-CodePath Project: The purpose of this prototype is to simulate the user's experience while using the Mailbox app to swipe cells and view the slide out menu. This demo utilises iOS gesture recognisers for panning and tapping. 
+CodePath Project: The purpose of this prototype is to simulate the user's experience while using the Tumblr app to swipe cells and view the slide out menu. This demo utilises iOS gesture recognisers for panning and tapping. 
 
 Time spent: 12 hours
 
