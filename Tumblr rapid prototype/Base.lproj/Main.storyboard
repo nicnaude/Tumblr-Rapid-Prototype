@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="s9w-Lr-wPR">
             <objects>
-                <viewController storyboardIdentifier="homeViewController" id="Vhu-BD-nGB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeViewController" id="Vhu-BD-nGB" customClass="HomeViewController" customModule="Tumblr_rapid_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hQg-T3-4mZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,39 +41,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" id="mBi-ZR-QDq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="wZo-jx-piB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                             <view contentMode="scaleToFill" misplaced="YES" id="CEF-pA-kzh">
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2u1-0F-ywh">
-                                        <rect key="frame" x="76" y="10" width="35" height="35"/>
+                                        <rect key="frame" x="76" y="9" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon"/>
+                                        <connections>
+                                            <action selector="onSearchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Isj-mN-MSU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IZq-vz-fI2">
-                                        <rect key="frame" x="135" y="9" width="50" height="35"/>
+                                        <rect key="frame" x="135" y="8" width="50" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
+                                        <connections>
+                                            <action selector="onComposeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Shk-h4-Sol"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lvg-FL-Bnm">
-                                        <rect key="frame" x="206" y="9" width="35" height="35"/>
+                                        <rect key="frame" x="268" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon"/>
+                                        <connections>
+                                            <action selector="onActivityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xxy-Jp-Ntm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3uz-UI-hWk">
-                                        <rect key="frame" x="262" y="9" width="35" height="35"/>
+                                        <rect key="frame" x="211" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon"/>
+                                        <connections>
+                                            <action selector="onAccountButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQY-E8-Ecb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OVl-sz-FXQ">
-                                        <rect key="frame" x="15" y="9" width="35" height="35"/>
+                                        <rect key="frame" x="18" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon"/>
+                                        <connections>
+                                            <action selector="onHomeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Do-bA-WS3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20184576511383057" green="0.2574094831943512" blue="0.33636218309402466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,15 +99,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20107102394104004" green="0.27699533104896545" blue="0.36016190052032471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="wZo-jx-piB" id="eQE-di-a7r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="158"/>
+            <point key="canvasLocation" x="477" y="128"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="vln-CG-fVb">
             <objects>
-                <viewController storyboardIdentifier="searchViewController" id="nYx-M2-GNm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchViewController" id="nYx-M2-GNm" customClass="SearchViewController" customModule="Tumblr_rapid_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ej-vE-quQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="103" y="1178"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="UL7-bD-Omx">
             <objects>
-                <viewController storyboardIdentifier="activityViewController" id="Hws-7W-z0Q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="activityViewController" id="Hws-7W-z0Q" customClass="ActivityViewController" customModule="Tumblr_rapid_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXx-ZJ-tAs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="1238" y="812"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="dna-rx-4LO">
             <objects>
-                <viewController storyboardIdentifier="accountViewController" id="Pxq-Tz-XoP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountViewController" id="Pxq-Tz-XoP" customClass="AccountViewController" customModule="Tumblr_rapid_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="65J-vb-7by">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="812"/>
         </scene>
-        <!--View Controller-->
+        <!--Compose View Controller-->
         <scene sceneID="yEv-gn-gl4">
             <objects>
-                <viewController storyboardIdentifier="composeViewController" id="4P1-Gd-cnB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="composeViewController" id="4P1-Gd-cnB" customClass="ComposeViewController" customModule="Tumblr_rapid_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8A9-jR-rNT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
