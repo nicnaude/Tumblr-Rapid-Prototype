@@ -19,6 +19,7 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var nevermindButton: UIButton!
     @IBOutlet weak var nevermindImageView: UIImageView!
+    @IBOutlet weak var nevermindView: UIView!
     
     // Variables
     var composeViewController: UIViewController!
@@ -75,7 +76,7 @@ class ComposeViewController: UIViewController {
             self.linkButton.center = CGPoint(x: self.linkButton.center.x, y: self.linkButton.center.y + (self.offsetForButtonY + 60))
             self.chatButton.center = CGPoint(x: self.chatButton.center.x, y: self.chatButton.center.y + (self.offsetForButtonY + 20))
             self.videoButton.center = CGPoint(x: self.videoButton.center.x, y: self.videoButton.center.y + (self.offsetForButtonY + 40))
-            
+            self.nevermindView.center = CGPoint(x: self.nevermindView.center.x, y: self.nevermindView.center.y + 100)
             
         }, completion: { finished in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

@@ -280,17 +280,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="nevermind" id="zXb-Bf-zsc">
-                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zns-au-qPB">
-                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                            <view contentMode="scaleToFill" id="qpF-1T-yUO">
+                                <rect key="frame" x="-20" y="495" width="360" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onNevermindTappedWithSender:" destination="4P1-Gd-cnB" eventType="touchUpInside" id="2E0-Lw-WgZ"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nevermind" id="zXb-Bf-zsc">
+                                        <rect key="frame" x="20" y="20" width="320" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zns-au-qPB">
+                                        <rect key="frame" x="20" y="20" width="320" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onNevermindTappedWithSender:" destination="4P1-Gd-cnB" eventType="touchUpInside" id="2E0-Lw-WgZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6vE-o5-xGG">
                                 <rect key="frame" x="16" y="-73" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -329,6 +335,7 @@
                         <outlet property="linkButton" destination="kIU-DV-WeR" id="bdX-D8-9f3"/>
                         <outlet property="nevermindButton" destination="zns-au-qPB" id="rTJ-H7-iRC"/>
                         <outlet property="nevermindImageView" destination="zXb-Bf-zsc" id="QVh-T6-NxD"/>
+                        <outlet property="nevermindView" destination="qpF-1T-yUO" id="rwG-OZ-NhO"/>
                         <outlet property="photoButton" destination="qpG-7t-aAH" id="h1S-mO-hix"/>
                         <outlet property="quoteButton" destination="pfT-L7-P9o" id="2Go-4J-uvj"/>
                         <outlet property="textButton" destination="6vE-o5-xGG" id="tZg-XM-Xyt"/>
