@@ -29,10 +29,6 @@
                                 <rect key="frame" x="0.0" y="264" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="login_form" id="tyG-kW-2Qo">
-                                <rect key="frame" x="10" y="206" width="300" height="132"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tfs-wf-qjG">
                                 <rect key="frame" x="249" y="20" width="71" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,11 +36,31 @@
                                     <action selector="onLogInTapped:" destination="Vhu-BD-nGB" eventType="touchUpInside" id="KoS-Rm-7fp"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="4pB-rK-dTq">
+                                <rect key="frame" x="-10" y="186" width="340" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="tyG-kW-2Qo">
+                                        <rect key="frame" x="20" y="20" width="300" height="132"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iq1-td-OJa">
+                                        <rect key="frame" x="20" y="108" width="150" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onCancelButtonTapped:" destination="Vhu-BD-nGB" eventType="touchUpInside" id="vK7-6y-nwT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.27843137254901962" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="iq1-td-OJa" id="8qf-Z2-pAk"/>
                         <outlet property="signUpFormImageView" destination="tyG-kW-2Qo" id="pKE-Jz-o9w"/>
+                        <outlet property="signUpFormView" destination="4pB-rK-dTq" id="aJQ-Tm-Jqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kou-RT-wGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,30 +280,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="photo_icon" id="Aea-Xo-fG8">
-                                <rect key="frame" x="123" y="142" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="chat_icon" id="dlu-JY-6Mq">
-                                <rect key="frame" x="123" y="265" width="75" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="link_icon" id="oGj-Qx-f5l">
-                                <rect key="frame" x="16" y="265" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="video_icon" id="08o-fG-Nuw">
-                                <rect key="frame" x="229" y="266" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="text_icon" id="82s-Gc-gJZ">
-                                <rect key="frame" x="16" y="142" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="quote_icon" id="uI2-s8-4RS">
-                                <rect key="frame" x="229" y="142" width="75" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="nevermind" id="zXb-Bf-zsc">
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -299,18 +291,48 @@
                                     <action selector="onNevermindTappedWithSender:" destination="4P1-Gd-cnB" eventType="touchUpInside" id="2E0-Lw-WgZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6vE-o5-xGG">
+                                <rect key="frame" x="16" y="143" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="text_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qpG-7t-aAH">
+                                <rect key="frame" x="123" y="143" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="photo_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pfT-L7-P9o">
+                                <rect key="frame" x="229" y="142" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quote_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIU-DV-WeR">
+                                <rect key="frame" x="16" y="263" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="link_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b6b-ZL-hKT">
+                                <rect key="frame" x="123" y="265" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="chat_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qme-AI-VA7">
+                                <rect key="frame" x="229" y="265" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="video_icon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20784313730000001" green="0.27450980390000002" blue="0.36078431370000003" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="cameraButtonBubble" destination="Aea-Xo-fG8" id="ax9-kF-pwa"/>
-                        <outlet property="chatButtonBubble" destination="dlu-JY-6Mq" id="Bj1-fi-Ozl"/>
-                        <outlet property="linkButtonBubble" destination="oGj-Qx-f5l" id="qpH-8b-svn"/>
+                        <outlet property="chatButton" destination="b6b-ZL-hKT" id="v5S-Z0-RUf"/>
+                        <outlet property="linkButton" destination="kIU-DV-WeR" id="bdX-D8-9f3"/>
                         <outlet property="nevermindButton" destination="zns-au-qPB" id="rTJ-H7-iRC"/>
                         <outlet property="nevermindImageView" destination="zXb-Bf-zsc" id="QVh-T6-NxD"/>
-                        <outlet property="quoteButtonBubble" destination="uI2-s8-4RS" id="jkm-Rk-UYc"/>
-                        <outlet property="textButtonBubble" destination="82s-Gc-gJZ" id="w9U-F3-ePS"/>
-                        <outlet property="videoButtonBubble" destination="08o-fG-Nuw" id="gJ2-0e-mSQ"/>
+                        <outlet property="photoButton" destination="qpG-7t-aAH" id="h1S-mO-hix"/>
+                        <outlet property="quoteButton" destination="pfT-L7-P9o" id="2Go-4J-uvj"/>
+                        <outlet property="textButton" destination="6vE-o5-xGG" id="tZg-XM-Xyt"/>
+                        <outlet property="videoButton" destination="qme-AI-VA7" id="3Kh-vs-iFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEP-Rj-4of" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,12 +11,12 @@ import UIKit
 class ComposeViewController: UIViewController {
     
     // Outlets
-    @IBOutlet weak var textButtonBubble: UIImageView!
-    @IBOutlet weak var cameraButtonBubble: UIImageView!
-    @IBOutlet weak var quoteButtonBubble: UIImageView!
-    @IBOutlet weak var linkButtonBubble: UIImageView!
-    @IBOutlet weak var chatButtonBubble: UIImageView!
-    @IBOutlet weak var videoButtonBubble: UIImageView!
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var quoteButton: UIButton!
+    @IBOutlet weak var linkButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var nevermindButton: UIButton!
     @IBOutlet weak var nevermindImageView: UIImageView!
     
@@ -33,7 +33,7 @@ class ComposeViewController: UIViewController {
         print("First animation plays.")
         
    UIView.animate(withDuration: 0.9, delay: 2.0 , options: .curveEaseOut, animations: {
-                self.cameraButtonBubble.transform = CGAffineTransform.identity
+                self.photoButton.transform = CGAffineTransform.identity
             })
     }
     

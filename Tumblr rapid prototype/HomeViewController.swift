@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var signUpFormImageView: UIImageView!
+    @IBOutlet weak var signUpFormView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //Variables
     
@@ -19,15 +21,25 @@ class HomeViewController: UIViewController {
     //Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.signUpFormImageView.alpha = 0.0
+        self.signUpFormView.alpha = 0.0
         // Do any additional setup after loading the view.
     }
     
     // Actions
     @IBAction func onLogInTapped(_ sender: Any) {
-        UIView.animate(withDuration: 0.9, delay: 2.0 , options: .curveEaseOut, animations: {
-            self.signUpFormImageView.alpha = 1.0
+        UIView.animate(withDuration: 0.5, delay: 0.1 , options: .curveEaseOut, animations: {
+            self.signUpFormView.alpha = 1.0
         })
     }
     
+    @IBAction func onCancelButtonTapped(_ sender: UIButton) {
+        print("cancel tapped")
+        self.cancelButton.backgroundColor = UIColor(red:0.01, green:0.99, blue:1.00, alpha:1.0)
+        self.cancelButton.alpha = 0.5
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1 , options: .curveEaseOut, animations: {
+            self.signUpFormView.alpha = 0.0
+        })
+
+    }
 }
