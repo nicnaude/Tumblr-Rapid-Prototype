@@ -11,14 +11,13 @@ import UIKit
 class TabBarControllerViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIScrollView!
-    
     @IBOutlet weak var searchMessage: UIImageView!
-    @IBOutlet weak var composeOverlayView: UIView!
     
     // ViewControllers
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
-    var composeViewController: UIViewController!
+
+    //    var composeViewController: UIViewController!
     var accountViewController: UIViewController!
     var activityViewController: UIViewController!
     
@@ -38,8 +37,6 @@ class TabBarControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        composeOverlayView.alpha = 0
-        
         increment = 10
         
         self.messageUpAndDown = CGPoint(x: self.searchMessage.center.x ,y: self.searchMessage.center.y + increment)
@@ -58,9 +55,6 @@ class TabBarControllerViewController: UIViewController {
         
         // Search storyboard
         searchViewController = main.instantiateViewController(withIdentifier: "searchViewController")
-
-        // Compose storyboard
-        composeViewController = main.instantiateViewController(withIdentifier: "composeViewController")
         
         // Account storyboard
         accountViewController = main.instantiateViewController(withIdentifier: "accountViewController")
@@ -69,8 +63,6 @@ class TabBarControllerViewController: UIViewController {
         activityViewController = main.instantiateViewController(withIdentifier: "activityViewController")
         
         containerView.addSubview(homeViewController.view)
-        
-        composeOverlayView.addSubview(composeViewController.view)
         
         // Animate floating message
         UIView.animate(withDuration: 0.9, delay: 0.0 , options: [.repeat, .curveEaseOut, .autoreverse], animations: {
@@ -130,7 +122,6 @@ class TabBarControllerViewController: UIViewController {
     
     // Button methods:
     @IBAction func onHomeButtonTapped(_ sender: UIButton) {
-        composeOverlayView.alpha = 0
         buttonName = "homeButton"
         buttonActiveState(sender: buttonName)
         
@@ -143,23 +134,14 @@ class TabBarControllerViewController: UIViewController {
     }
     
     @IBAction func onSearchButtonTapped(_ sender: UIButton) {
-        composeOverlayView.alpha = 0
         buttonName = "searchButton"
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(searchViewController.view)
     }
     
-    @IBAction func onComposeButtonTapped(_ sender: UIButton) {
-        composeOverlayView.alpha = 1
-        buttonName = "composeButton"
-        buttonActiveState(sender: buttonName)
-        
-        composeOverlayView.addSubview(composeViewController.view)
-    }
     
     @IBAction func onActivityButtonTapped(_ sender: UIButton) {
-        composeOverlayView.alpha = 0
         buttonName = "activityButton"
         buttonActiveState(sender: buttonName)
         
@@ -167,12 +149,10 @@ class TabBarControllerViewController: UIViewController {
     }
     
     @IBAction func onAccountButtonTapped(_ sender: UIButton) {
-        composeOverlayView.alpha = 0
         buttonName = "accountButton"
         buttonActiveState(sender: buttonName)
         
         containerView.addSubview(accountViewController.view)
     }
-    
     
 } // The end

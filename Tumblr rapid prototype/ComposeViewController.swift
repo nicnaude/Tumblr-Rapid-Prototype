@@ -17,6 +17,8 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var linkButtonBubble: UIImageView!
     @IBOutlet weak var chatButtonBubble: UIImageView!
     @IBOutlet weak var videoButtonBubble: UIImageView!
+    @IBOutlet weak var nevermindButton: UIButton!
+    @IBOutlet weak var nevermindImageView: UIImageView!
     
     // Variables
     var composeViewController: UIViewController!
@@ -25,29 +27,29 @@ class ComposeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        
-        // Compose storyboard
-        composeViewController = main.instantiateViewController(withIdentifier: "composeViewController")
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         print("First animation plays.")
+        
+   UIView.animate(withDuration: 0.9, delay: 2.0 , options: .curveEaseOut, animations: {
+                self.cameraButtonBubble.transform = CGAffineTransform.identity
+            })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        
         print("Dissapear animation plays.")
     }
     
     // Actions
-    @IBAction func onNevermindTapped(content: UIViewController) {
-        content.willMove(toParentViewController: nil)
-        content.view.removeFromSuperview()
-        content.removeFromParentViewController()
-        //        composeViewController.dismiss(animated: true, completion: nil)
-        //        composeViewController!.willMove(toParentViewController: nil)
-        //        composeViewController!.view.removeFromSuperview()
-        //        composeViewController!.removeFromParentViewController()
-        //    }
-        
-        
+    @IBAction func onNevermindTapped(sender: UIButton) {
+        UIView.animate(withDuration: 0.9, delay: 2.0 , options: .curveEaseOut, animations: {
+            
+            
+            
+        }, completion: { finished in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 }

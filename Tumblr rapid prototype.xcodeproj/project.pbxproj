@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A518AC61DD19319005B1BFB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A518AC51DD19319005B1BFB /* Common.swift */; };
 		4AEE62121DCF9B37000EF7BC /* TabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE62111DCF9B37000EF7BC /* TabBarControllerViewController.swift */; };
 		4AEE62141DCF9D02000EF7BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE62131DCF9D02000EF7BC /* HomeViewController.swift */; };
 		4AEE62161DCF9D19000EF7BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE62151DCF9D19000EF7BC /* SearchViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A518AC51DD19319005B1BFB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		4AEE62111DCF9B37000EF7BC /* TabBarControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllerViewController.swift; sourceTree = "<group>"; };
 		4AEE62131DCF9D02000EF7BC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4AEE62151DCF9D19000EF7BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4AF996F71DCC3F8E005278CE /* Main.storyboard */,
 				4AEE62111DCF9B37000EF7BC /* TabBarControllerViewController.swift */,
 				4AEE62131DCF9D02000EF7BC /* HomeViewController.swift */,
+				4A518AC51DD19319005B1BFB /* Common.swift */,
 				4AEE62151DCF9D19000EF7BC /* SearchViewController.swift */,
 				4AEE62171DCF9D37000EF7BC /* ComposeViewController.swift */,
 				4AEE62191DCF9D4B000EF7BC /* AccountViewController.swift */,
@@ -284,6 +287,7 @@
 				4AEE62121DCF9B37000EF7BC /* TabBarControllerViewController.swift in Sources */,
 				4AEE621A1DCF9D4B000EF7BC /* AccountViewController.swift in Sources */,
 				4AEE621C1DCF9D59000EF7BC /* ActivityViewController.swift in Sources */,
+				4A518AC61DD19319005B1BFB /* Common.swift in Sources */,
 				4AF996F61DCC3F8E005278CE /* ViewController.swift in Sources */,
 				4AEE62181DCF9D37000EF7BC /* ComposeViewController.swift in Sources */,
 				4AF996F41DCC3F8E005278CE /* AppDelegate.swift in Sources */,

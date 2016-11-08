@@ -33,9 +33,19 @@
                                 <rect key="frame" x="10" y="206" width="300" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tfs-wf-qjG">
+                                <rect key="frame" x="249" y="20" width="71" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onLogInTapped:" destination="Vhu-BD-nGB" eventType="touchUpInside" id="KoS-Rm-7fp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.27843137254901962" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="signUpFormImageView" destination="tyG-kW-2Qo" id="pKE-Jz-o9w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kou-RT-wGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +80,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
                                         <connections>
-                                            <action selector="onComposeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Shk-h4-Sol"/>
+                                            <segue destination="4P1-Gd-cnB" kind="modal" id="aDc-Iz-VDN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="lvg-FL-Bnm">
@@ -104,10 +114,6 @@
                                 <rect key="frame" x="0.0" y="448" width="185" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" id="DGo-Ck-pC4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20107102394104004" green="0.27699533104896545" blue="0.36016190052032471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -115,7 +121,6 @@
                         <outlet property="accountButton" destination="3uz-UI-hWk" id="hLG-Ib-sLj"/>
                         <outlet property="activityButton" destination="lvg-FL-Bnm" id="Lfa-eQ-79z"/>
                         <outlet property="composeButton" destination="IZq-vz-fI2" id="AJl-lD-Vyu"/>
-                        <outlet property="composeOverlayView" destination="DGo-Ck-pC4" id="PUH-K0-1yw"/>
                         <outlet property="containerView" destination="wZo-jx-piB" id="eQE-di-a7r"/>
                         <outlet property="homeButton" destination="OVl-sz-FXQ" id="TMk-43-5mi"/>
                         <outlet property="searchButton" destination="2u1-0F-ywh" id="hZ9-s1-RcD"/>
@@ -142,6 +147,10 @@
                                         <rect key="frame" x="20" y="20" width="320" height="1217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="OFU-DJ-Sj3">
+                                        <rect key="frame" x="137" y="227" width="87" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -150,6 +159,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1300"/>
                     <connections>
+                        <outlet property="loaderImageView" destination="OFU-DJ-Sj3" id="KYd-QE-0L3"/>
                         <outlet property="scrollView" destination="rwh-eM-tYG" id="8Jw-RO-k7k"/>
                         <outlet property="trendingFeed" destination="ADJ-3d-z7F" id="9qx-iy-GIp"/>
                     </connections>
@@ -254,11 +264,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" id="0Y9-ly-HAS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20107102394104004" green="0.27699533104896545" blue="0.36016190052032471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="photo_icon" id="Aea-Xo-fG8">
                                 <rect key="frame" x="123" y="142" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -291,15 +296,18 @@
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="onNevermindTapped:" destination="4P1-Gd-cnB" eventType="touchUpInside" id="9PN-l2-xtJ"/>
+                                    <action selector="onNevermindTappedWithSender:" destination="4P1-Gd-cnB" eventType="touchUpInside" id="2E0-Lw-WgZ"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" red="0.20784313730000001" green="0.27450980390000002" blue="0.36078431370000003" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="cameraButtonBubble" destination="Aea-Xo-fG8" id="ax9-kF-pwa"/>
                         <outlet property="chatButtonBubble" destination="dlu-JY-6Mq" id="Bj1-fi-Ozl"/>
                         <outlet property="linkButtonBubble" destination="oGj-Qx-f5l" id="qpH-8b-svn"/>
+                        <outlet property="nevermindButton" destination="zns-au-qPB" id="rTJ-H7-iRC"/>
+                        <outlet property="nevermindImageView" destination="zXb-Bf-zsc" id="QVh-T6-NxD"/>
                         <outlet property="quoteButtonBubble" destination="uI2-s8-4RS" id="jkm-Rk-UYc"/>
                         <outlet property="textButtonBubble" destination="82s-Gc-gJZ" id="w9U-F3-ePS"/>
                         <outlet property="videoButtonBubble" destination="08o-fG-Nuw" id="gJ2-0e-mSQ"/>
