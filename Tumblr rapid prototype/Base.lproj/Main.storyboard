@@ -292,34 +292,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6vE-o5-xGG">
-                                <rect key="frame" x="16" y="143" width="75" height="95"/>
+                                <rect key="frame" x="16" y="-73" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="text_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qpG-7t-aAH">
-                                <rect key="frame" x="123" y="143" width="75" height="95"/>
+                                <rect key="frame" x="123" y="-22" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="photo_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pfT-L7-P9o">
-                                <rect key="frame" x="229" y="142" width="75" height="95"/>
+                                <rect key="frame" x="229" y="-68" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="quote_icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIU-DV-WeR">
-                                <rect key="frame" x="16" y="263" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="link_icon"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b6b-ZL-hKT">
-                                <rect key="frame" x="123" y="265" width="75" height="95"/>
+                                <rect key="frame" x="123" y="115" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="chat_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qme-AI-VA7">
-                                <rect key="frame" x="229" y="265" width="75" height="95"/>
+                                <rect key="frame" x="229" y="60" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="video_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIU-DV-WeR">
+                                <rect key="frame" x="16" y="80" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="link_icon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20784313730000001" green="0.27450980390000002" blue="0.36078431370000003" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
